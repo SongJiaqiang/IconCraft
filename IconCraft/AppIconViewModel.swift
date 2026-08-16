@@ -33,6 +33,9 @@ final class AppIconViewModel: ObservableObject {
     @Published var isProcessing = false
     @Published var errorMessage: String?
     @Published var showSuccessAlert = false
+    @Published var showDownloadSuccessAlert = false
+
+    private var downloadedCatalogURL: URL?
 
     private let exporter = AppIconsetExporter()
     private var scopedImageURL: URL?
@@ -51,6 +54,10 @@ final class AppIconViewModel: ObservableObject {
 
     var canReplaceIcons: Bool {
         sourceImage != nil && selectedIconSetURL != nil && !isProcessing
+    }
+
+    var canDownloadIcons: Bool {
+        sourceImage != nil && !isProcessing
     }
 }
 
@@ -176,6 +183,36 @@ extension AppIconViewModel {
                 errorMessage = String(localized: "Add a source image and an existing app icon to compare.")
             }
         }
+    }
+
+    func downloadAppIcons() {
+        guard let sourceImage else {
+            errorMessage = String(localized: "Choose a source image to download an App Icon catalog.")
+            return
+        }
+
+        Task {
+            let token = beginOperation()
+            defer { endOperation() }
+
+            errorMessage = nil
+            showDownloadSuccessAlert = false
+
+            do {
+                let catalogURL = try await exporter.exportToDownloads(sourceImage: sourceImage)
+                guard isCurrentOperation(token) else { return }
+                downloadedCatalogURL = catalogURL
+                showDownloadSuccessAlert = true
+            } catch {
+                guard isCurrentOperation(token) else { return }
+                present(error)
+            }
+        }
+    }
+
+    func revealDownloadedCatalog() {
+        guard let downloadedCatalogURL else { return }
+        NSWorkspace.shared.activateFileViewerSelecting([downloadedCatalogURL])
     }
 
     func replaceAppIcons() {

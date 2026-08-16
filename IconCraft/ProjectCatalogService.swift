@@ -8,11 +8,12 @@
 import AppKit
 import Foundation
 
-enum AppIconError: LocalizedError {
+enum AppIconError: LocalizedError, Equatable {
     case catalogNotFound
     case contentsJSONUnreadable
     case resizeFailed
     case exportFailed
+    case downloadFailed
 
     var errorDescription: String? {
         switch self {
@@ -24,6 +25,8 @@ enum AppIconError: LocalizedError {
             return String(localized: "The source image could not be resized to every required icon size.")
         case .exportFailed:
             return String(localized: "The App Icon catalog could not be written. Existing icons were left unchanged.")
+        case .downloadFailed:
+            return String(localized: "The App Icon catalog could not be saved to Downloads.")
         }
     }
 
@@ -39,6 +42,8 @@ enum AppIconError: LocalizedError {
             return String(localized: "Use a valid square PNG or JPEG and try exporting again.")
         case .exportFailed:
             return String(localized: "Check that you have write access to the selected .appiconset folder.")
+        case .downloadFailed:
+            return String(localized: "Check that your Downloads folder is available and writable.")
         }
     }
 }

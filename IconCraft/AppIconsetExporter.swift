@@ -25,6 +25,23 @@ final class AppIconsetExporter {
             try Self.replaceCatalog(at: targetDirectory, with: files)
         }.value
     }
+
+    /// Writes a complete `AppIcon.appiconset` into the user’s Downloads folder, replacing any previous copy.
+    func exportToDownloads(sourceImage: NSImage) async throws -> URL {
+        guard let downloads = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first else {
+            throw AppIconError.downloadFailed
+        }
+
+        let target = downloads.appendingPathComponent("AppIcon.appiconset", isDirectory: true)
+        do {
+            try await exportAndReplace(sourceImage: sourceImage, targetDirectory: target)
+        } catch let error as AppIconError where error == .resizeFailed {
+            throw error
+        } catch {
+            throw AppIconError.downloadFailed
+        }
+        return target
+    }
 }
 
 // MARK: - Render

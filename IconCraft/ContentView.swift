@@ -38,6 +38,17 @@ struct ContentView: View {
             Text("The App Icon catalog was updated with every required iOS size.")
         }
         .alert(
+            "Catalog Downloaded",
+            isPresented: $viewModel.showDownloadSuccessAlert
+        ) {
+            Button("Show in Finder") {
+                viewModel.revealDownloadedCatalog()
+            }
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text("AppIcon.appiconset was saved to your Downloads folder.")
+        }
+        .alert(
             "Something Went Wrong",
             isPresented: errorAlertPresented
         ) {
@@ -313,6 +324,12 @@ private extension ContentView {
             }
             .disabled(!viewModel.canCalculateDiff || viewModel.isProcessing)
             .help("Generate a black-and-white pixel difference")
+
+            Button(action: viewModel.downloadAppIcons) {
+                Label("Download", systemImage: "arrow.down.circle")
+            }
+            .disabled(!viewModel.canDownloadIcons)
+            .help("Save AppIcon.appiconset to your Downloads folder")
 
             Button(action: viewModel.replaceAppIcons) {
                 Label("Replace AppIcon", systemImage: "square.and.arrow.down")
