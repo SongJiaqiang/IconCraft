@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 110;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		F72181CF303085BE00099983 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F72181B9303085BD00099983 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F72181C0303085BD00099983;
+			remoteInfo = IconCraft;
+		};
+		F72181D9303085BE00099983 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F72181B9303085BD00099983 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F72181C0303085BD00099983;
+			remoteInfo = IconCraft;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F72181C1303085BD00099983 /* IconCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IconCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F72181CE303085BE00099983 /* IconCraftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IconCraftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F72181D8303085BE00099983 /* IconCraftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IconCraftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F72181C3303085BD00099983 /* IconCraft */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = IconCraft;
+			sourceTree = "<group>";
+		};
+		F72181D1303085BE00099983 /* IconCraftTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = IconCraftTests;
+			sourceTree = "<group>";
+		};
+		F72181DB303085BE00099983 /* IconCraftUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = IconCraftUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F72181BE303085BD00099983 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		F72181CB303085BE00099983 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		F72181D5303085BE00099983 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F72181B8303085BD00099983 = {
+			isa = PBXGroup;
+			children = (
+				F72181C3303085BD00099983 /* IconCraft */,
+				F72181D1303085BE00099983 /* IconCraftTests */,
+				F72181DB303085BE00099983 /* IconCraftUITests */,
+				F72181C2303085BD00099983 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F72181C2303085BD00099983 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F72181C1303085BD00099983 /* IconCraft.app */,
+				F72181CE303085BE00099983 /* IconCraftTests.xctest */,
+				F72181D8303085BE00099983 /* IconCraftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F72181C0303085BD00099983 /* IconCraft */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F72181E0303085BE00099983 /* Build configuration list for PBXNativeTarget "IconCraft" */;
+			buildPhases = (
+				F72181BD303085BD00099983 /* Sources */,
+				F72181BE303085BD00099983 /* Frameworks */,
+				F72181BF303085BD00099983 /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				F72181C3303085BD00099983 /* IconCraft */,
+			);
+			name = IconCraft;
+			productName = IconCraft;
+			productReference = F72181C1303085BD00099983 /* IconCraft.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F72181CD303085BE00099983 /* IconCraftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F72181E3303085BE00099983 /* Build configuration list for PBXNativeTarget "IconCraftTests" */;
+			buildPhases = (
+				F72181CA303085BE00099983 /* Sources */,
+				F72181CB303085BE00099983 /* Frameworks */,
+				F72181CC303085BE00099983 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F72181D0303085BE00099983 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F72181D1303085BE00099983 /* IconCraftTests */,
+			);
+			name = IconCraftTests;
+			productName = IconCraftTests;
+			productReference = F72181CE303085BE00099983 /* IconCraftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F72181D7303085BE00099983 /* IconCraftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F72181E6303085BE00099983 /* Build configuration list for PBXNativeTarget "IconCraftUITests" */;
+			buildPhases = (
+				F72181D4303085BE00099983 /* Sources */,
+				F72181D5303085BE00099983 /* Frameworks */,
+				F72181D6303085BE00099983 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F72181DA303085BE00099983 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F72181DB303085BE00099983 /* IconCraftUITests */,
+			);
+			name = IconCraftUITests;
+			productName = IconCraftUITests;
+			productReference = F72181D8303085BE00099983 /* IconCraftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F72181B9303085BD00099983 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2700;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					F72181C0303085BD00099983 = {
+						CreatedOnToolsVersion = 27.0;
+					};
+					F72181CD303085BE00099983 = {
+						CreatedOnToolsVersion = 27.0;
+						TestTargetID = F72181C0303085BD00099983;
+					};
+					F72181D7303085BE00099983 = {
+						CreatedOnToolsVersion = 27.0;
+						TestTargetID = F72181C0303085BD00099983;
+					};
+				};
+			};
+			buildConfigurationList = F72181BC303085BD00099983 /* Build configuration list for PBXProject "IconCraft" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F72181B8303085BD00099983;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = F72181C2303085BD00099983 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F72181C0303085BD00099983 /* IconCraft */,
+				F72181CD303085BE00099983 /* IconCraftTests */,
+				F72181D7303085BE00099983 /* IconCraftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F72181BF303085BD00099983 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		F72181CC303085BE00099983 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		F72181D6303085BE00099983 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F72181BD303085BD00099983 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		F72181CA303085BE00099983 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		F72181D4303085BE00099983 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F72181D0303085BE00099983 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F72181C0303085BD00099983 /* IconCraft */;
+			targetProxy = F72181CF303085BE00099983 /* PBXContainerItemProxy */;
+		};
+		F72181DA303085BE00099983 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F72181C0303085BD00099983 /* IconCraft */;
+			targetProxy = F72181D9303085BE00099983 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F72181DE303085BE00099983 /* Debug configuration for PBXProject "IconCraft" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 4T9J35ZW6C;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 27.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F72181DF303085BE00099983 /* Release configuration for PBXProject "IconCraft" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 4T9J35ZW6C;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 27.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		F72181E1303085BE00099983 /* Debug configuration for PBXNativeTarget "IconCraft" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4T9J35ZW6C;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Icon Craft";
+				INFOPLIST_KEY_CFBundleName = "Icon Craft";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.songjiaqiang.IconCraft;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F72181E2303085BE00099983 /* Release configuration for PBXNativeTarget "IconCraft" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4T9J35ZW6C;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Icon Craft";
+				INFOPLIST_KEY_CFBundleName = "Icon Craft";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.songjiaqiang.IconCraft;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		F72181E4303085BE00099983 /* Debug configuration for PBXNativeTarget "IconCraftTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4T9J35ZW6C;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 27.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.songjiaqiang.IconCraftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IconCraft.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IconCraft";
+			};
+			name = Debug;
+		};
+		F72181E5303085BE00099983 /* Release configuration for PBXNativeTarget "IconCraftTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4T9J35ZW6C;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 27.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.songjiaqiang.IconCraftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IconCraft.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IconCraft";
+			};
+			name = Release;
+		};
+		F72181E7303085BE00099983 /* Debug configuration for PBXNativeTarget "IconCraftUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4T9J35ZW6C;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.songjiaqiang.IconCraftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = IconCraft;
+			};
+			name = Debug;
+		};
+		F72181E8303085BE00099983 /* Release configuration for PBXNativeTarget "IconCraftUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4T9J35ZW6C;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.songjiaqiang.IconCraftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = IconCraft;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F72181BC303085BD00099983 /* Build configuration list for PBXProject "IconCraft" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F72181DE303085BE00099983 /* Debug configuration for PBXProject "IconCraft" */,
+				F72181DF303085BE00099983 /* Release configuration for PBXProject "IconCraft" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		F72181E0303085BE00099983 /* Build configuration list for PBXNativeTarget "IconCraft" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F72181E1303085BE00099983 /* Debug configuration for PBXNativeTarget "IconCraft" */,
+				F72181E2303085BE00099983 /* Release configuration for PBXNativeTarget "IconCraft" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		F72181E3303085BE00099983 /* Build configuration list for PBXNativeTarget "IconCraftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F72181E4303085BE00099983 /* Debug configuration for PBXNativeTarget "IconCraftTests" */,
+				F72181E5303085BE00099983 /* Release configuration for PBXNativeTarget "IconCraftTests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		F72181E6303085BE00099983 /* Build configuration list for PBXNativeTarget "IconCraftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F72181E7303085BE00099983 /* Debug configuration for PBXNativeTarget "IconCraftUITests" */,
+				F72181E8303085BE00099983 /* Release configuration for PBXNativeTarget "IconCraftUITests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F72181B9303085BD00099983 /* Project object */;
+	validationLevel = 1;
+}
