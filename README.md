@@ -6,19 +6,18 @@
 
   **The Pixel-Perfect iOS App Icon Generator & Asset Replacer for macOS.**
 
-  [![macOS](https://img.shields.io/badge/macOS-13.0%2B-blue?style=flat-square&logo=apple&logoColor=white)](https://apple.com/macos)
-  [![Swift](https://img.shields.io/badge/Swift-5.9%2B-F05138?style=flat-square&logo=swift&logoColor=white)](https://swift.org)
+  [![macOS](https://img.shields.io/badge/macOS-14.6%2B-blue?style=flat-square&logo=apple&logoColor=white)](https://www.apple.com/macos/)
+  [![Swift](https://img.shields.io/badge/Swift-5.9%2B-F05138?style=flat-square&logo=swift&logoColor=white)](https://www.swift.org)
   [![SwiftUI](https://img.shields.io/badge/UI-SwiftUI-007AFF?style=flat-square&logo=swift&logoColor=white)](https://developer.apple.com/xcode/swiftui/)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
-  [![Release](https://img.shields.io/github/v/release/yourusername/IconCraft?style=flat-square&color=34C759)](https://github.com/yourusername/IconCraft/releases)
-  [![Privacy](https://img.shields.io/badge/Privacy-100%25%20On--Device-success?style=flat-square)](https://github.com/yourusername/IconCraft)
+  [![Release](https://img.shields.io/github/v/release/SongJiaqiang/IconCraft?style=flat-square&color=34C759)](https://github.com/SongJiaqiang/IconCraft/releases)
+  [![Privacy](https://img.shields.io/badge/Privacy-100%25%20On--Device-success?style=flat-square)](https://github.com/SongJiaqiang/IconCraft)
 
   <p align="center">
+    <a href="#why-iconcraft">Why IconCraft</a> •
     <a href="#key-features">Key Features</a> •
-    <a href="#quick-start">Quick Start</a> •
+    <a href="#generated-icon-specifications">Specifications</a> •
     <a href="#installation">Installation</a> •
-    <a href="#pixel-diff-engine">Pixel Diff Engine</a> •
-    <a href="#building-from-source">Build from Source</a> •
     <a href="#license">License</a>
   </p>
 
@@ -54,7 +53,7 @@ Replacing app icons in Xcode often means repetitive manual work: exporting dozen
 
 ## 📋 Generated Icon Specifications
 
-IconCraft strictly complies with the latest Apple Human Interface Guidelines:
+IconCraft strictly complies with the latest [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/app-icons):
 
 | Device / Idiom | Size (Points) | Scale | Rendered Pixels | Target Usage |
 | :--- | :--- | :--- | :--- | :--- |
@@ -71,8 +70,15 @@ IconCraft strictly complies with the latest Apple Human Interface Guidelines:
 ## 📦 Installation
 
 ### Option 1: Direct Download (Recommended)
-Download the latest `IconCraft.dmg` directly from the [GitHub Releases](https://github.com/yourusername/IconCraft/releases) page. Drag **IconCraft.app** into your `/Applications` directory.
+Download the latest `IconCraft-Installer.dmg` from the [GitHub Releases](https://github.com/SongJiaqiang/IconCraft/releases) page. Open the disk image and drag **IconCraft** into **Applications**.
 
 ### Option 2: Homebrew Cask (Coming Soon)
 ```bash
 brew install --cask iconcraft
+```
+
+---
+
+## 📄 License
+
+This project is released under the [MIT License](LICENSE).
