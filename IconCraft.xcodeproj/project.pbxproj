@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 110;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
@@ -29,9 +29,22 @@
 		F72181D8303085BE00099983 /* IconCraftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IconCraftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F72181F1303085BE00099983 /* Exceptions for "IconCraft" folder in "IconCraft" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F72181C0303085BD00099983 /* IconCraft */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F72181C3303085BD00099983 /* IconCraft */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F72181F1303085BE00099983 /* Exceptions for "IconCraft" folder in "IconCraft" target */,
+			);
 			path = IconCraft;
 			sourceTree = "<group>";
 		};
@@ -173,6 +186,7 @@
 				};
 			};
 			buildConfigurationList = F72181BC303085BD00099983 /* Build configuration list for PBXProject "IconCraft" */;
+			compatibilityVersion = "Xcode 16.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -381,9 +395,9 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IconCraft/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = IconCraft;
 				INFOPLIST_KEY_CFBundleName = IconCraft;
-				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Jiaqiang Song. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -423,9 +437,9 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IconCraft/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = IconCraft;
 				INFOPLIST_KEY_CFBundleName = IconCraft;
-				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Jiaqiang Song. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
