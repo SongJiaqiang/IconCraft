@@ -1,10 +1,10 @@
 # Privacy Policy for IconCraft
 
-**Last Updated: August 16, 2026**
+**Last Updated: August 25, 2026**
 
 This Privacy Policy describes how IconCraft (“the app”), developed by Jiaqiang Song (“we”, “us”, or “our”), handles information when you use the IconCraft macOS application.
 
-IconCraft is a local developer tool for generating and replacing iOS app icon catalogs on your Mac.
+IconCraft is a local developer tool for generating and replacing Xcode app icon catalogs on your Mac.
 
 ### 1. No Personal Data Collection
 
@@ -18,8 +18,8 @@ All image resizing, pixel-difference comparison, and `.appiconset` catalog write
 
 Files you work with remain on your device:
 
-- **Source images and Xcode projects** are accessed only after you choose them in the system file picker (`NSOpenPanel`). Access is limited to those security-scoped locations.
-- **Download** writes a generated `AppIcon.appiconset` to your macOS Downloads folder. That folder is used only to save the catalog you asked to export.
+- **Source images and Xcode projects** are accessed only after you choose them in the system file picker (`NSOpenPanel`), including Home if you add it. Access is limited to those security-scoped locations and is remembered with bookmarks.
+- **Download** asks you to choose a folder (Downloads is offered as a starting location) and writes a generated `AppIcon.appiconset` there. IconCraft remembers that folder for later exports.
 - **Replace AppIcon** writes generated icon files into the `.appiconset` you selected.
 
 IconCraft operates inside the macOS App Sandbox and does not scan unrelated files on your Mac.

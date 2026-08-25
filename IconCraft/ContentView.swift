@@ -35,7 +35,7 @@ struct ContentView: View {
         ) {
             Button("OK", role: .cancel) {}
         } message: {
-            Text("The App Icon catalog was updated with every required iOS size.")
+            Text("The App Icon catalog was updated with every required icon size.")
         }
         .alert(
             "Catalog Downloaded",
@@ -46,7 +46,7 @@ struct ContentView: View {
             }
             Button("OK", role: .cancel) {}
         } message: {
-            Text("AppIcon.appiconset was saved to your Downloads folder.")
+            Text(downloadSuccessMessage)
         }
         .alert(
             "Something Went Wrong",
@@ -65,6 +65,14 @@ struct ContentView: View {
             set: { if !$0 { viewModel.errorMessage = nil } }
         )
     }
+
+    private var downloadSuccessMessage: String {
+        let folder = viewModel.downloadedCatalogFolderPath
+        if folder.isEmpty {
+            return String(localized: "AppIcon.appiconset was saved to the folder you chose.")
+        }
+        return String(localized: "AppIcon.appiconset was saved to \(folder).")
+    }
 }
 
 // MARK: - Toolbar & info
@@ -79,9 +87,9 @@ private extension ContentView {
             .help("Choose the source icon image")
 
             Button(action: viewModel.selectProjectFolder) {
-                Label("iOS Project", systemImage: "folder")
+                Label("Xcode Project", systemImage: "folder")
             }
-            .help("Choose an iOS project folder or .appiconset")
+            .help("Choose an Xcode project folder or .appiconset")
         }
 
         ToolbarItem(placement: .automatic) {
@@ -329,14 +337,14 @@ private extension ContentView {
                 Label("Download", systemImage: "arrow.down.circle")
             }
             .disabled(!viewModel.canDownloadIcons)
-            .help("Save AppIcon.appiconset to your Downloads folder")
+            .help("Save AppIcon.appiconset to a folder you choose")
 
             Button(action: viewModel.replaceAppIcons) {
                 Label("Replace AppIcon", systemImage: "square.and.arrow.down")
             }
             .buttonStyle(.borderedProminent)
             .disabled(!viewModel.canReplaceIcons)
-            .help("Write every iOS icon size into the selected catalog")
+            .help("Write every required icon size into the selected catalog")
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 10)

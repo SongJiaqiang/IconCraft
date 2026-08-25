@@ -4,7 +4,7 @@
 
   # IconCraft (图标匠)
 
-  **The Pixel-Perfect iOS App Icon Generator & Asset Replacer for macOS.**
+  **The Pixel-Perfect App Icon Generator & Asset Replacer for macOS.**
 
   [![macOS](https://img.shields.io/badge/macOS-14.6%2B-blue?style=flat-square&logo=apple&logoColor=white)](https://www.apple.com/macos/)
   [![Swift](https://img.shields.io/badge/Swift-5.9%2B-F05138?style=flat-square&logo=swift&logoColor=white)](https://www.swift.org)
@@ -33,7 +33,7 @@ Replacing app icons in Xcode often means repetitive manual work: exporting dozen
 
 **IconCraft** automates this workflow locally in seconds:
 1. Drag in your high-res `1024×1024` master icon.
-2. Select your iOS project directory — IconCraft automatically scans and targets your `AppIcon.appiconset`.
+2. Select your Xcode project directory — IconCraft automatically scans and targets your `AppIcon.appiconset`.
 3. Inspect pixel-level visual differences against the current version.
 4. Replace all specifications and generate a validated `Contents.json` with a single click.
 
@@ -41,8 +41,8 @@ Replacing app icons in Xcode often means repetitive manual work: exporting dozen
 
 ## ✨ Key Features
 
-- **⚡️ Full iOS Specification Matrix:** Automatically generates all required scales and dimensions across iPhone, iPad, and App Store Marketing formats (1024x1024).
-- **🔍 Intelligent Project Inspector:** Automatically traverses your iOS repository to locate and link `.appiconset` catalogs.
+- **⚡️ Full Icon Specification Matrix:** Automatically generates all required scales and dimensions across iPhone, iPad, and App Store Marketing formats (1024x1024).
+- **🔍 Intelligent Project Inspector:** Automatically traverses your Xcode project to locate and link `.appiconset` catalogs.
 - **🌓 Pixel-Level Diff Engine:** Built on top of CoreGraphics byte-buffer analysis. Identifies visual changes immediately:
   - **Black (`#000000`)**: Pixel discrepancies / modified regions.
   - **White (`#FFFFFF`)**: Identical / unchanged regions.
@@ -63,7 +63,7 @@ IconCraft strictly complies with the latest [Apple Human Interface Guidelines](h
 | **iPhone** | `60x60` | `2x`, `3x` | 120px, 180px | Home Screen App Icon |
 | **iPad** | `20x20`, `29x29`, `40x40` | `1x`, `2x` | 20px - 80px | Notifications, Settings, Spotlight |
 | **iPad** | `76x76`, `83.5x83.5` | `1x`, `2x` | 76px, 152px, 167px | iPad & iPad Pro Home Screen |
-| **iOS Marketing** | `1024x1024` | `1x` | 1024px | App Store Listing Icon |
+| **App Store Marketing** | `1024x1024` | `1x` | 1024px | App Store Listing Icon |
 
 ---
 

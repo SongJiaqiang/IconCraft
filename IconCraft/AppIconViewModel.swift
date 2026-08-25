@@ -40,12 +40,18 @@ final class AppIconViewModel: ObservableObject {
     private let exporter = AppIconsetExporter()
     private var scopedImageURL: URL?
     private var scopedProjectURL: URL?
+    private var scopedExportURL: URL?
     private var operationID = 0
     private var inFlightOperations = 0
+
+    init() {
+        Task { await restoreBookmarkedProjectIfAvailable() }
+    }
 
     deinit {
         scopedImageURL?.stopAccessingSecurityScopedResource()
         scopedProjectURL?.stopAccessingSecurityScopedResource()
+        scopedExportURL?.stopAccessingSecurityScopedResource()
     }
 
     var canCalculateDiff: Bool {
@@ -59,6 +65,10 @@ final class AppIconViewModel: ObservableObject {
     var canDownloadIcons: Bool {
         sourceImage != nil && !isProcessing
     }
+
+    var downloadedCatalogFolderPath: String {
+        downloadedCatalogURL?.deletingLastPathComponent().path(percentEncoded: false) ?? ""
+    }
 }
 
 // MARK: - Image selection
@@ -71,7 +81,7 @@ extension AppIconViewModel {
         panel.allowsMultipleSelection = false
         panel.allowedContentTypes = [.png, .jpeg, .webP, .heic, .tiff, .gif]
         panel.title = String(localized: "Choose Source Icon")
-        panel.message = String(localized: "Select a square image to generate iOS app icons.")
+        panel.message = String(localized: "Select a square image to generate app icons for an Xcode .appiconset.")
 
         Task {
             guard await panel.begin() == .OK, let url = panel.url else { return }
@@ -119,8 +129,8 @@ extension AppIconViewModel {
         panel.allowsMultipleSelection = false
         panel.treatsFilePackagesAsDirectories = true
         panel.allowedContentTypes = [.folder]
-        panel.title = String(localized: "Choose iOS Project")
-        panel.message = String(localized: "Select an iOS project folder, Assets.xcassets, or an .appiconset.")
+        panel.title = String(localized: "Choose Xcode Project")
+        panel.message = String(localized: "Select an Xcode project folder, Assets.xcassets, or an .appiconset. Home is allowed; IconCraft remembers the folder you choose.")
 
         Task {
             guard await panel.begin() == .OK, let url = panel.url else { return }
@@ -144,6 +154,7 @@ extension AppIconViewModel {
             let catalogs = try await ProjectCatalogService.findAppIconSets(in: url)
             guard isCurrentOperation(token) else { return }
 
+            SecurityScopedBookmarkStore.save(url, for: .projectFolder)
             availableIconSets = catalogs
             selectedIconSetURL = preferredIconSet(in: catalogs)
             await loadCurrentIcon()
@@ -192,14 +203,16 @@ extension AppIconViewModel {
         }
 
         Task {
-            let token = beginOperation()
-            defer { endOperation() }
-
             errorMessage = nil
             showDownloadSuccessAlert = false
 
+            guard let folder = await resolvedExportFolder() else { return }
+
+            let token = beginOperation()
+            defer { endOperation() }
+
             do {
-                let catalogURL = try await exporter.exportToDownloads(sourceImage: sourceImage)
+                let catalogURL = try await exporter.export(sourceImage: sourceImage, into: folder)
                 guard isCurrentOperation(token) else { return }
                 downloadedCatalogURL = catalogURL
                 showDownloadSuccessAlert = true
@@ -320,6 +333,39 @@ extension AppIconViewModel {
         } else {
             errorMessage = error.localizedDescription
         }
+    }
+
+    private func restoreBookmarkedProjectIfAvailable() async {
+        guard let url = SecurityScopedBookmarkStore.resolvedURL(for: .projectFolder) else { return }
+        await loadProject(from: url)
+    }
+
+    /// Reuses the bookmarked export folder, or asks the user to choose one with the standard Open panel.
+    private func resolvedExportFolder() async -> URL? {
+        if let url = SecurityScopedBookmarkStore.resolvedURL(for: .exportFolder) {
+            replaceScopedURL(&scopedExportURL, with: url)
+            return url
+        }
+        return await selectExportFolder()
+    }
+
+    private func selectExportFolder() async -> URL? {
+        let panel = NSOpenPanel()
+        panel.canChooseFiles = false
+        panel.canChooseDirectories = true
+        panel.canCreateDirectories = true
+        panel.allowsMultipleSelection = false
+        panel.prompt = String(localized: "Choose")
+        panel.title = String(localized: "Save App Icon Catalog")
+        panel.message = String(
+            localized: "Choose a folder to save AppIcon.appiconset. IconCraft remembers this location."
+        )
+        panel.directoryURL = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first
+
+        guard await panel.begin() == .OK, let url = panel.url else { return nil }
+        SecurityScopedBookmarkStore.save(url, for: .exportFolder)
+        replaceScopedURL(&scopedExportURL, with: url)
+        return url
     }
 
     private func replaceScopedURL(_ storage: inout URL?, with url: URL) {

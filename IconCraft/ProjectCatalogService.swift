@@ -26,7 +26,7 @@ enum AppIconError: LocalizedError, Equatable {
         case .exportFailed:
             return String(localized: "The App Icon catalog could not be written. Existing icons were left unchanged.")
         case .downloadFailed:
-            return String(localized: "The App Icon catalog could not be saved to Downloads.")
+            return String(localized: "The App Icon catalog could not be saved to the folder you chose.")
         }
     }
 
@@ -34,7 +34,7 @@ enum AppIconError: LocalizedError, Equatable {
         switch self {
         case .catalogNotFound:
             return String(
-                localized: "Choose an iOS project folder that contains an .appiconset inside Assets.xcassets."
+                localized: "Choose an Xcode project folder that contains an .appiconset inside Assets.xcassets."
             )
         case .contentsJSONUnreadable:
             return String(localized: "Ensure the .appiconset contains a valid Contents.json file.")
@@ -43,12 +43,12 @@ enum AppIconError: LocalizedError, Equatable {
         case .exportFailed:
             return String(localized: "Check that you have write access to the selected .appiconset folder.")
         case .downloadFailed:
-            return String(localized: "Check that your Downloads folder is available and writable.")
+            return String(localized: "Choose another folder in the Open dialog, or check that the selected folder is writable.")
         }
     }
 }
 
-/// Recursively inspects an iOS project tree for `.appiconset` catalogs.
+/// Recursively inspects an Xcode project tree for `.appiconset` catalogs.
 enum ProjectCatalogService {
     /// Finds every `.appiconset` under `projectDirectory`.
     ///
@@ -83,6 +83,7 @@ extension ProjectCatalogService {
         "Pods",
         "Carthage",
         "node_modules",
+        "Library",
     ]
 
     private static let skippedPackageExtensions: Set<String> = [
@@ -92,6 +93,11 @@ extension ProjectCatalogService {
         "appex",
         "framework",
         "xcframework",
+        "photoslibrary",
+        "photolibrary",
+        "musiclibrary",
+        "tvlibrary",
+        "imovielibrary",
     ]
 
     nonisolated private static func scanAppIconSets(in root: URL) throws -> [URL] {

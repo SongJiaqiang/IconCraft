@@ -4,5 +4,19 @@
 <dict>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>IconCraft scans only the folder you choose in the Open dialog for Xcode .appiconset catalogs. If that folder is your Home directory, macOS also asks about Apple Music because a Music library can live under Music. IconCraft does not play, import, or upload songs; it only looks for App Icon catalogs such as Assets.xcassets/AppIcon.appiconset.</string>
+	<key>NSDesktopFolderUsageDescription</key>
+	<string>IconCraft reads and writes App Icon catalogs in the Xcode project folder you select. For example, if your project sits on the Desktop, it updates AppIcon.appiconset with generated PNG sizes and Contents.json.</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>IconCraft reads and writes App Icon catalogs in the Xcode project folder you select. For example, if your project lives in Documents, it replaces Assets.xcassets/AppIcon.appiconset with every required icon PNG.</string>
+	<key>NSDownloadsFolderUsageDescription</key>
+	<string>IconCraft can save a generated AppIcon.appiconset to a folder you choose in the Open dialog, including Downloads. For example, it writes Contents.json and AppIcon-iphone-60x60@3x.png into that catalog. The chosen folder is remembered with a security-scoped bookmark.</string>
+	<key>NSNetworkVolumesUsageDescription</key>
+	<string>IconCraft reads and writes App Icon catalogs in the Xcode project folder you select. For example, if that project lives on a network share, it updates the chosen .appiconset with generated PNG sizes. IconCraft does not host a server or listen for incoming connections.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>IconCraft uses images you pick as the source app icon, and it scans folders you choose for Xcode .appiconset catalogs. If you add your Home folder or Pictures, macOS may ask for Photos access because a Photos library can live there. IconCraft only uses a selected file such as a 1024×1024 PNG; it does not browse, upload, or change your photo library.</string>
+	<key>NSRemovableVolumesUsageDescription</key>
+	<string>IconCraft reads and writes App Icon catalogs in the Xcode project folder you select. For example, if that project is on a removable drive, it updates AppIcon.appiconset with generated icon PNGs. IconCraft does not communicate with USB devices.</string>
 </dict>
 </plist>
