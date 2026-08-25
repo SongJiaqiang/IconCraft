@@ -8,7 +8,7 @@
 import AppKit
 import Foundation
 
-/// Writes a complete iOS `.appiconset` (PNGs + `Contents.json`), replacing any existing catalog atomically.
+/// Writes a complete Xcode `.appiconset` (PNGs + `Contents.json`), replacing any existing catalog atomically.
 final class AppIconsetExporter {
     nonisolated private struct CatalogFile: Sendable {
         let filename: String
@@ -26,13 +26,9 @@ final class AppIconsetExporter {
         }.value
     }
 
-    /// Writes a complete `AppIcon.appiconset` into the user’s Downloads folder, replacing any previous copy.
-    func exportToDownloads(sourceImage: NSImage) async throws -> URL {
-        guard let downloads = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first else {
-            throw AppIconError.downloadFailed
-        }
-
-        let target = downloads.appendingPathComponent("AppIcon.appiconset", isDirectory: true)
+    /// Writes a complete `AppIcon.appiconset` into a user-selected parent folder, replacing any previous copy.
+    func export(sourceImage: NSImage, into parentDirectory: URL) async throws -> URL {
+        let target = parentDirectory.appendingPathComponent("AppIcon.appiconset", isDirectory: true)
         do {
             try await exportAndReplace(sourceImage: sourceImage, targetDirectory: target)
         } catch let error as AppIconError where error == .resizeFailed {
