@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var viewModel = AppIconViewModel()
     @State private var searchText = ""
+    @State private var showiPhoneIcons = true
+    @State private var showiPadIcons = true
 
     var body: some View {
         NavigationStack {
@@ -175,20 +177,36 @@ private extension ContentView {
 
 private extension ContentView {
     var filteredSpecs: [IconSpecification] {
-        let query = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
-        let specs = AppIconConfig.allSpecs
-        guard !query.isEmpty else { return specs }
-        return specs.filter { spec in
-            let haystack = [
-                spec.idiomLabel,
-                spec.idiom,
-                spec.size,
-                spec.scale,
-                spec.filename,
-                spec.pixelLabel,
-            ].joined(separator: " ")
-            return haystack.localizedCaseInsensitiveContains(query)
+        AppIconConfig.allSpecs.filter { spec in
+            matchesIdiomFilter(spec) && matchesSearch(spec)
         }
+    }
+
+    func matchesIdiomFilter(_ spec: IconSpecification) -> Bool {
+        switch spec.idiom {
+        case "iphone":
+            return showiPhoneIcons
+        case "ipad":
+            return showiPadIcons
+        case "ios-marketing":
+            return showiPhoneIcons && showiPadIcons
+        default:
+            return showiPhoneIcons || showiPadIcons
+        }
+    }
+
+    func matchesSearch(_ spec: IconSpecification) -> Bool {
+        let query = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !query.isEmpty else { return true }
+        let haystack = [
+            spec.idiomLabel,
+            spec.idiom,
+            spec.size,
+            spec.scale,
+            spec.filename,
+            spec.pixelLabel,
+        ].joined(separator: " ")
+        return haystack.localizedCaseInsensitiveContains(query)
     }
 
     var iconBrowser: some View {
@@ -202,6 +220,12 @@ private extension ContentView {
                     .padding(.vertical, 2)
                     .background(.quaternary, in: Capsule())
                 Spacer()
+                Toggle("iPhone", isOn: $showiPhoneIcons)
+                    .toggleStyle(.checkbox)
+                    .help("Show iPhone icon sizes")
+                Toggle("iPad", isOn: $showiPadIcons)
+                    .toggleStyle(.checkbox)
+                    .help("Show iPad icon sizes")
                 HStack(spacing: 6) {
                     Image(systemName: "magnifyingglass")
                         .foregroundStyle(.secondary)
@@ -220,7 +244,7 @@ private extension ContentView {
 
             ScrollView {
                 if filteredSpecs.isEmpty {
-                    emptyBrowserMessage("No icon sizes match “\(searchText)”.")
+                    emptyBrowserMessage(emptyFilterMessage)
                 } else {
                     LazyVGrid(
                         columns: [GridItem(.adaptive(minimum: 124), spacing: 12)],
@@ -249,6 +273,17 @@ private extension ContentView {
             .foregroundStyle(.secondary)
             .frame(maxWidth: .infinity, minHeight: 180)
             .padding()
+    }
+
+    var emptyFilterMessage: String {
+        if !showiPhoneIcons && !showiPadIcons {
+            return "Turn on iPhone or iPad to see icon sizes."
+        }
+        let query = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        if !query.isEmpty {
+            return "No icon sizes match “\(query)”."
+        }
+        return "No icon sizes match the current filters."
     }
 }
 
